@@ -7,11 +7,10 @@ public class test2_7 {
         for(int i=0; i<n; i++) {
             if(arr[i] == 1) {
                 cnt++;
-                answer += cnt;
+                answer = cnt;
             }
             else cnt = 0;
         }
-
         return answer;
     }
 

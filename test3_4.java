@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class test3_4 {
 
     public int solution(int n, int m , int[] arr) {
         int answer = 0, sum = 0, lt = 0;
@@ -15,7 +15,7 @@ public class Main {
         return answer;
     }
     public static void main(String[] args) {
-        Main T = new Main();
+        test3_4 T = new test3_4();
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
         int m = kb.nextInt();
