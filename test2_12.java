@@ -7,16 +7,14 @@ public class test2_12 {
             for(int j=1; j<=n; j++) {
                 int cnt = 0;
                 for(int k=0; k<m; k++) {
-                    int pi=0, pj=0;
+                    int pi = 0, pj = 0;
                     for(int s=0; s<n; s++) {
                         if(arr[k][s] == i) pi = s;
                         if(arr[k][s] == j) pj = s;
                     }
-                    if(pi<pj) cnt++;
+                    if(pi < pj) cnt++;
                 }
-                if(cnt==m) {
-                    answer++;
-                }
+                if(cnt == m) answer++;
             }
         }
         return answer;

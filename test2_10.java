@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class test2_10 {
+
     int[] dx = {-1, 0, 1, 0};
     int[] dy = {0, 1, 0, -1};
 
@@ -12,7 +13,7 @@ public class test2_10 {
                 for(int k=0; k<4; k++) {
                     int nx = i + dx[k];
                     int ny = j + dy[k];
-                    if(arr[nx][ny] >= arr[i][j] && nx >= 0 && nx< n && ny >= 0 && ny < n) {
+                    if(nx>=0 && nx<n && ny>=0 && ny<n && arr[i][j] <= arr[nx][ny]) {
                         flag = false;
                         break;
                     }
@@ -22,6 +23,8 @@ public class test2_10 {
         }
         return answer;
     }
+
+
     public static void main(String[] args) {
         test2_10 T = new test2_10();
         Scanner kb = new Scanner(System.in);

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class test2_9 {
     public int solution(int n, int[][] arr) {
-        int answer = 0;
+        int answer = Integer.MIN_VALUE;
         int sum1, sum2;
         for(int i=0; i<n; i++) {
             sum1 = sum2 = 0;
@@ -13,7 +13,7 @@ public class test2_9 {
             answer = Math.max(answer, sum1);
             answer = Math.max(answer, sum2);
         }
-        sum1=sum2=0;
+        sum1 = sum2 = 0;
         for(int i=0; i<n; i++) {
             sum1 += arr[i][i];
             sum2 += arr[i][n-1-i];
@@ -35,6 +35,4 @@ public class test2_9 {
         }
         System.out.println(T.solution(n, arr));
     }
-
-
 }

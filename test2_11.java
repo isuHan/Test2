@@ -13,23 +13,24 @@ public class test2_11 {
                     }
                 }
             }
-            if(cnt>max) {
+            if(max < cnt) {
                 max = cnt;
                 answer = i;
             }
         }
         return answer;
     }
+
     public static void main(String[] args) {
         test2_11 T = new test2_11();
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
         int[][] arr = new int[n+1][6];
-        for(int i=1; i<=n; i++) {
-            for(int j=1; j<=5; j++) {
+        for(int i=1; i<n; i++) {
+            for(int j=1; j<6; j++) {
                 arr[i][j] = kb.nextInt();
             }
         }
-        System.out.print(T.solution(n, arr));
+        System.out.println(T.solution(n, arr));
     }
 }
