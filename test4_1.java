@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Main {
+public class test4_1 {
     public char solution(int n, String s) {
         char answer = ' ';
         HashMap<Character, Integer> map = new HashMap<>();
@@ -25,7 +25,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main T = new Main();
+        test4_1 T = new test4_1();
         Scanner kb = new Scanner(System.in);
         int n = kb.nextInt();
         String str = kb.next();
