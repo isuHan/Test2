@@ -1,24 +1,27 @@
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.Scanner;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class Main {
-    public ArrayList<Integer> solution(int n, int k, int[] arr) {
-        ArrayList<Integer> answer = new ArrayList<>();
-        HashMap<Integer, Integer> HM = new HashMap<>();
-        for(int i=0; i<k-1; i++) {
-            HM.put(arr[i], HM.getOrDefault(arr[i], 0) + 1);
+    public int solution(int[] arr, int n, int k) {
+        int answer = -1;
+        TreeSet<Integer> Tset = new TreeSet<>(Collections.reverseOrder());
+        for(int i=0; i<n; i++) {
+            for(int j=i+1; j<n; j++) {
+                for(int l=j+1; l<n; l++) {
+                    Tset.add(arr[i]+arr[j]+arr[l]);
+                }
+            }
         }
-        int lt = 0;
-        for(int rt=k-1; rt<n; rt++) {
-            HM.put(arr[rt], HM.getOrDefault(arr[rt], 0) + 1);
-            answer.add(HM.size());
-            HM.put(arr[lt], HM.get(arr[lt])-1);
-            if(HM.get(arr[lt])==0) HM.remove(arr[lt]);
-            lt++;
+        int cnt=0;
+        for(int x : Tset) {
+            cnt++;
+            if(cnt==k) return x;
         }
         return answer;
     }
+
     public static void main(String[] args) {
         Main T = new Main();
         Scanner kb = new Scanner(System.in);
@@ -26,10 +29,8 @@ public class Main {
         int k = kb.nextInt();
         int[] arr = new int[n];
         for(int i=0; i<n; i++) {
-            arr[i] = kb.nextInt();
+            arr[i]=kb.nextInt();
         }
-        for (int x : T.solution(n, k, arr)) {
-            System.out.print(x + " ");
-        }
+        System.out.println(T.solution(arr, n, k));
     }
 }
